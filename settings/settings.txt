@@ -6,7 +6,7 @@ input_source = "bluesky"
 # Enables/disables crossposting to twitter and mastodon
 # Accepted values: True, False
 outputs = {
-    "twitter": True,
+    "twitter": False,
     "mastodon": True,
     "bluesky": True
 }
@@ -53,12 +53,12 @@ max_retries = 5
 post_time_limit = 12
 # max_per_hour limits the amount of posts that can be crossposted withing an hour. 0 means no limit.
 # Accepted values: Any integer
-max_per_hour = 0
+max_per_hour = 4
 # overflow_posts determines what happens to posts that are not crossposted due to the hourly limit.
 # If set to "retry" the poster will attempt to send them again when posts per hour are below the limit.
 # If set to "skip" the posts will be skipped and the poster will instead continue on with new posts.
 # Accepted values: retry, skip
-overflow_posts = "retry"
+overflow_posts = "skip"
 # If cross_delete is set to true, posts you delete from bluesky within one our of being crossposted will also be deleted from mastodon and twitter
 cross_delete = True
 # Sets minimum log level i Loguru logger
