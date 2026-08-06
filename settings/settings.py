@@ -7,7 +7,8 @@ input_source = "bluesky"
 # Accepted values: True, False
 outputs = {
     "twitter": False,
-    "mastodon": True
+    "mastodon": True,
+    "bluesky": False
 }
 # Mastodon has two different ways to write user accounts, with or without server. Setting mastodon_mentions to "account" will use the full account (username@server.name),
 # while "username" will switch it to just the username. This setting is only relevant if mastodon is used as input. If mentions (not mastodon_mentions) is set to "url" or "skip",
