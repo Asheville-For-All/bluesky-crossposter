@@ -1,6 +1,7 @@
 name: Run the Crossposter
 run-name: Running the Crossposter
 on:
+    workflow_dispatch:
     schedule:
         - cron: '0 */2 * * *'
 jobs:
