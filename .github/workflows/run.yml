@@ -16,13 +16,13 @@ jobs:
                   python-version: '3.12'
                   cache: pip
             - name: Install dependencies
+              run: |
+                  pip install -r requirements.txt
+            - name: Run crossposter
               env:
                 BSKY_PASSWORD: ${{secrets.BSKY_PASSWORD}}
                 MASTODON_TOKEN: ${{secrets.MASTODON_TOKEN}}
                 BSKY_HANDLE: ${{secrets.BSKY_HANDLE}}
-              run: |
-                  pip install -r requirements.txt
-            - name: Run crossposter
               run: |
                   python run.py
             - name: Commit
