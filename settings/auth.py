@@ -22,6 +22,17 @@ TWITTER_APP_SECRET = ""
 TWITTER_ACCESS_TOKEN = ""
 TWITTER_ACCESS_TOKEN_SECRET = ""
 
+#test code
+if os.environ.get('BSKY_HANDLE'):
+    print("Found the Handle secret")
+else:
+    print("Didn't find the Handle secret.")
+
+if os.environ.get('BSKY_PASSWORD'):
+    print("Found the Password secret")
+else:
+    print("Didn't find the Password secret.")
+
 # Override settings with environment variables if they exist
 BSKY_HANDLE = os.environ.get('BSKY_HANDLE') if os.environ.get('BSKY_HANDLE') else BSKY_HANDLE
 BSKY_PASSWORD = os.environ.get('BSKY_PASSWORD') if os.environ.get('BSKY_PASSWORD') else BSKY_PASSWORD
