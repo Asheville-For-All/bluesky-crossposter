@@ -1,0 +1,43 @@
+2026-08-07 13:21:10 [INFO]: Reading local database (read_db_file db.py:36)
+2026-08-07 13:21:10 [INFO]: Reading cache of recent posts. (read_cache db.py:159)
+2026-08-07 13:21:10 [INFO]: ./db/post.cache not found. (read_cache db.py:165)
+2026-08-07 13:21:10 [INFO]: Connecting to Bluesky: None. (bsky_connect connections.py:58)
+2026-08-07 13:21:10 [INFO]: Reading session cache (session_cache_read connections.py:111)
+2026-08-07 13:21:10 [INFO]: ./db/session.cache not found. (session_cache_read connections.py:113)
+2026-08-07 13:21:10 [INFO]: Connecting to Bluesky using saved session. (bsky_connect connections.py:66)
+2026-08-07 13:21:10 [INFO]: Creating new Bluesky session using password and username. (bsky_connect connections.py:70)
+2026-08-07 13:21:10 [ERROR]: Either session_string or login and password should be provided. (bsky_connect connections.py:77)
+2026-08-07 13:21:10 [ERROR]: Could not fetch posts: 'ValueError' object has no attribute 'response' (run run.py:11)
+2026-08-07 13:21:10 [DEBUG]: Traceback (most recent call last):
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/main/connections.py", line 67, in bsky_connect
+    bsky_connect._connection.login(session_string=session)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/client.py", line 104, in login
+    raise ValueError('Either session_string or login and password should be provided.')
+ValueError: Either session_string or login and password should be provided.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/main/connections.py", line 71, in bsky_connect
+    bsky_connect._connection.login(BSKY_HANDLE, BSKY_PASSWORD)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/client.py", line 104, in login
+    raise ValueError('Either session_string or login and password should be provided.')
+ValueError: Either session_string or login and password should be provided.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/run.py", line 9, in run
+    queues = get_posts()
+             ^^^^^^^^^^^
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/input/fetch.py", line 12, in get_posts
+    posts = bluesky.get_posts()
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/input/bluesky.py", line 14, in get_posts
+    bsky = bsky_connect()
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/bluesky-crossposter/bluesky-crossposter/main/connections.py", line 78, in bsky_connect
+    if e.response and e.response.content.error == "RateLimitExceeded":
+       ^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'response'
+ (run run.py:12)
