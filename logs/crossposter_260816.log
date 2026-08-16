@@ -912,3 +912,119 @@
 2026-08-16 14:30:52 [DEBUG]: Post created at: 2025-12-22 21:05:43 (get_posts bluesky.py:33)
 2026-08-16 14:30:52 [INFO]: Post bafyreia4ptmpu6bn3etyypkc6dq3zupd4ryvt4ajc4gtsoig22py7c556m posted outside time limit. (get_posts bluesky.py:39)
 2026-08-16 14:30:52 [WARNING]: No posts found from input. (get_posts fetch.py:18)
+2026-08-16 16:34:13 [INFO]: Reading local database (read_db_file db.py:36)
+2026-08-16 16:34:13 [INFO]: Reading cache of recent posts. (read_cache db.py:159)
+2026-08-16 16:34:13 [DEBUG]: Cache: {} (read_cache db.py:179)
+2026-08-16 16:34:13 [DEBUG]: Deleted: [] (read_cache db.py:180)
+2026-08-16 16:34:13 [INFO]: Connecting to Bluesky: None. (bsky_connect connections.py:58)
+2026-08-16 16:34:14 [INFO]: Reading session cache (session_cache_read connections.py:111)
+2026-08-16 16:34:14 [INFO]: Connecting to Bluesky using saved session. (bsky_connect connections.py:66)
+2026-08-16 16:34:14 [INFO]: Session changed: (on_session_change connections.py:104)
+2026-08-16 16:34:14 [INFO]: Session changed: (on_session_change connections.py:104)
+2026-08-16 16:34:14 [INFO]: Saving changed session (on_session_change connections.py:106)
+2026-08-16 16:34:14 [INFO]: Saving session cache (session_cache_write connections.py:120)
+2026-08-16 16:34:19 [INFO]: Creating new Bluesky session using password and username. (bsky_connect connections.py:70)
+2026-08-16 16:34:19 [INFO]: Session changed: (on_session_change connections.py:104)
+2026-08-16 16:34:19 [INFO]: Saving changed session (on_session_change connections.py:106)
+2026-08-16 16:34:19 [INFO]: Saving session cache (session_cache_write connections.py:120)
+2026-08-16 16:34:24 [ERROR]:  (bsky_connect connections.py:77)
+2026-08-16 16:34:24 [DEBUG]: Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/request.py", line 81, in _handle_request_errors
+    raise exception
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/request.py", line 203, in _send_request
+    response = self._client.request(method=method, url=url, headers=headers, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/bluesky-crossposter-fork-for-personal-use-not-development/bluesky-crossposter-fork-for-personal-use-not-development/main/connections.py", line 71, in bsky_connect
+    bsky_connect._connection.login(BSKY_HANDLE, BSKY_PASSWORD)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/client.py", line 106, in login
+    self.me = self.app.bsky.actor.get_profile(models.AppBskyActorGetProfile.Params(actor=session.handle))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/namespaces/sync_ns.py", line 398, in get_profile
+    response = self._client.invoke_query(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/base.py", line 108, in invoke_query
+    return self._invoke(InvokeType.QUERY, url=self._build_url(nsid), params=params, data=data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/bluesky-crossposter-fork-for-personal-use-not-development/bluesky-crossposter-fork-for-personal-use-not-development/main/expanded_client.py", line 21, in _invoke
+    self.response = super()._invoke(*args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/client.py", line 40, in _invoke
+    return super()._invoke(invoke_type, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/client/base.py", line 123, in _invoke
+    return self.request.get(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/request.py", line 213, in get
+    return _parse_response(self._send_request('GET', *args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/request.py", line 206, in _send_request
+    _handle_request_errors(e)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/atproto_client/request.py", line 83, in _handle_request_errors
+    raise exceptions.InvokeTimeoutError from e
+atproto_client.exceptions.InvokeTimeoutError
+ (bsky_connect connections.py:84)
+2026-08-16 16:34:24 [ERROR]: Could not connect to Bluesky. (get_posts bluesky.py:16)
+2026-08-16 16:34:24 [WARNING]: No posts found from input. (get_posts fetch.py:18)
